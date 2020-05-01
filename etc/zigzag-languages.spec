@@ -7,6 +7,7 @@ Summary:        Language packages installer
 URL:            http://github.com/zigzag-linux/zigzag-languages
 Source0:        %{name}-%{version}.tar.gz
 
+BuildRequires:  python3-devel
 Requires:       python3
 Requires:       zypper
 BuildArch:      noarch
@@ -26,7 +27,7 @@ install -d %{buildroot}%{_unitdir}
 install -D -m 0644 etc/*.{service,timer} %{buildroot}%{_unitdir}
 
 install -d %{buildroot}%{python3_sitelib}/zigzag_languages
-cp zigzag_languages/* %{buildroot}%{python3_sitelib}/zigzag_languages
+cp -r zigzag_languages/* %{buildroot}%{python3_sitelib}/zigzag_languages
 
 install -d %{buildroot}%{_sbindir}
 ln -s %{_sbindir}/service %{buildroot}%{_sbindir}/rczigzag-languages
