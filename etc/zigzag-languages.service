@@ -1,0 +1,6 @@
+[Unit]
+Description=Install language packages
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/zigzag-languages -y
