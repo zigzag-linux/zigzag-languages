@@ -1,9 +1,9 @@
 from .subprocess import run_subprocess
 
-BASE_ARGS = ("rpm", "--qf", "%{name}\n")
+BASE_ARGS = ("dnf", "--quiet")
 
 
-def run_rpm(*args):
+def run_dnf(*args):
     full_args = BASE_ARGS + args
     output = run_subprocess(full_args)
 
